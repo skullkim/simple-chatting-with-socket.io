@@ -1,0 +1,21 @@
+#chat-lists{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 50vh;
+    width: 90vw;
+    overflow: scroll;
+}
+.my-message{
+    display: flex;
+    justify-content: flex-end; 
+    padding: 4px;
+    border: 2px solid rgb(14, 138, 240);
+    border-radius: 10px;
+    margin-bottom: 4px;
+    width: min-content;
+    background-color: rgb(14, 138, 240);
+    color: white;
+    /* display: flex;
+    flex-direction: row-reverse; */
+}
