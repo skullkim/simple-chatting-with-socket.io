@@ -25,6 +25,7 @@ sequelize.sync({force: false})
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(cookie_parser());
 const {time} = require('console');
@@ -35,14 +36,13 @@ app.use(session({
     cookie:{
         httpOnly: true,
         secure: false,
-        maxAge: time.getMilliseconds + (10000 * 60),
+        maxAge: time.getMilliseconds + (100000 * 60),
     },
     name: 'session-cookie'
 }));
 
 const index_router = require('./routes');
 const chat_router = require('./routes/chat');
-//const { time } = require('console');
 
 app.use('/script', express.static('public'));
 app.use('/style', express.static('public'));
