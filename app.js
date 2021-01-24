@@ -41,6 +41,7 @@ app.use(session({
     name: 'session-cookie'
 }));
 
+const webSocket = require('./socket');
 const index_router = require('./routes');
 const chat_router = require('./routes/chat');
 
@@ -62,6 +63,8 @@ app.use((err, req, res, next) => {
     res.send(res.locals.message);
 });
 
-app.listen(app.get('port'), () => {
+const server = app.listen(app.get('port'), () => {
     console.log(`${app.get('port')} server start`);
-})
+});
+
+webSocket(server);

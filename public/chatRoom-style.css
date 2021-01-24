@@ -6,16 +6,29 @@
     width: 90vw;
     overflow: scroll;
 }
-.my-message{
+.others-message, .my-message{
     padding: 4px;
-    border: 2px solid rgb(14, 138, 240);
     border-radius: 10px;
     margin-bottom: 4px;
     width: min-content;
-    background-color: rgb(14, 138, 240);
     color: white;
 }
-
+.my-message{
+    border: 2px solid rgb(14, 138, 240);
+    background-color: rgb(14, 138, 240);
+}
+.others-message{
+    align-self: flex-start;
+    border: 2px solid darkgray;
+    background-color: darkgray; 
+}
+.nick-name-my, .nick-name-others{
+    font-size: 1vw;
+    color:lightslategray;
+}
+.nick-name-others{
+    align-self: flex-start;
+}
 .new-member{
     align-self: center;
     font-size: 3vw;
